@@ -1,3 +1,3 @@
-const LOGIN = 'LOGIN';
+const LOGIN_USER = 'LOGIN';
 
-export default LOGIN;
+export default LOGIN_USER;

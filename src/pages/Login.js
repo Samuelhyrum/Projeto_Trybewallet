@@ -18,10 +18,10 @@ class Login extends React.Component {
     this.setState({
       [name]: value,
     }, () => {
-      const { password } = this.state;
+      const { password, email } = this.state;
       const minLength = 6;
 
-      if (password.length >= minLength) {
+      if (password.length >= minLength && this.validateEmail(email)) {
         this.setState({
           buttonDisable: false,
         });
@@ -31,6 +31,12 @@ class Login extends React.Component {
         });
       }
     });
+  };
+
+  validateEmail = (email) => {
+    const regex = /[a-z0-9]+@[a-z]+\.[a-z]/;
+    console.log(regex.test(email));
+    return regex.test(email);
   };
 
   handleSubmit = (event) => {

@@ -1,5 +1,5 @@
 // src/reducers/login.js
-import LOGIN from '../actions/types';
+import LOGIN_USER from '../actions/types';
 
 const INITIAL_STATE = {
   email: '',
@@ -7,7 +7,7 @@ const INITIAL_STATE = {
 
 function loginReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
-  case LOGIN:
+  case LOGIN_USER:
     return action.payload.userProfile;
   default:
     return state;

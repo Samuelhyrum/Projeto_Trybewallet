@@ -1,8 +1,8 @@
 // Coloque aqui suas actions
-import LOGIN from './types';
+import LOGIN_USER from './types';
 
 const loginUser = (userProfile) => ({
-  type: LOGIN,
+  type: LOGIN_USER,
   payload: { userProfile },
 });
 
