@@ -1,5 +1,5 @@
 // src/reducers/login.js
-import LOGIN_USER from '../actions/types';
+import { LOGIN_USER } from '../actions/types';
 
 const INITIAL_STATE = {
   email: '',

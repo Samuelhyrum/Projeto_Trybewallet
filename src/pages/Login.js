@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import loginUser from '../redux/actions';
+import { loginUser } from '../redux/actions';
 
 class Login extends React.Component {
   constructor(props) {
@@ -35,7 +35,6 @@ class Login extends React.Component {
 
   validateEmail = (email) => {
     const regex = /[a-z0-9]+@[a-z]+\.[a-z]/;
-    console.log(regex.test(email));
     return regex.test(email);
   };
 

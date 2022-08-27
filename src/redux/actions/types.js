@@ -1,3 +1,2 @@
-const LOGIN_USER = 'LOGIN';
-
-export default LOGIN_USER;
+export const LOGIN_USER = 'LOGIN';
+export const WALLET = 'WALLET';

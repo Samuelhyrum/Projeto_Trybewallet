@@ -1,9 +1,12 @@
 // Coloque aqui suas actions
-import LOGIN_USER from './types';
+import { LOGIN_USER, WALLET } from './types';
 
-const loginUser = (userProfile) => ({
+export const loginUser = (userProfile) => ({
   type: LOGIN_USER,
   payload: { userProfile },
 });
 
-export default loginUser;
+export const walletUser = (walletProfile) => ({
+  type: WALLET,
+  payload: { walletProfile },
+});
