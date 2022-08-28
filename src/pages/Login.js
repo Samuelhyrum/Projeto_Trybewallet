@@ -53,14 +53,18 @@ class Login extends React.Component {
       <div>
         Login
         <form onSubmit={ this.handleSubmit }>
+          E-mail:
           <input
             type="text"
+            label="Email:"
             placeholder="email"
             data-testid="email-input"
             value={ email }
             name="email"
             onChange={ this.handleChange }
           />
+          <br />
+          Senha:
           <input
             type="password"
             data-testid="password-input"
@@ -69,6 +73,7 @@ class Login extends React.Component {
             name="password"
             onChange={ this.handleChange }
           />
+          <br />
           <button
             type="submit"
             disabled={ buttonDisable }
