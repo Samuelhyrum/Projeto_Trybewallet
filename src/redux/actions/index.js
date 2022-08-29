@@ -1,5 +1,5 @@
 // Coloque aqui suas actions
-import { LOGIN_USER, WALLET, API, FAIL } from './types';
+import { LOGIN_USER, WALLET, API, FAIL, EXPENSES } from './types';
 
 export const loginUser = (userProfile) => ({
   type: LOGIN_USER,
@@ -16,6 +16,11 @@ const fail = (error) => ({
   payload: { error },
 });
 
+const ADD_EXPENSES = (expenses) => ({
+  type: EXPENSES,
+  expenses,
+});
+
 export function fetchMoeadas() {
   return async (dispactch) => {
     dispactch(walletRequest());
@@ -25,6 +30,18 @@ export function fetchMoeadas() {
       const keys = Object.keys(resposta);
       const currencies = keys.filter((moeada) => moeada !== 'USDT');
       dispactch(API_ACTION(currencies));
+    } catch (error) {
+      dispactch(fail(error));
+    }
+  };
+}
+export function fetchCoins(expenses) {
+  return async (dispactch) => {
+    dispactch(walletRequest());
+    try {
+      const API_WALLET = await fetch('https://economia.awesomeapi.com.br/json/all');
+      const exchangeRates = await API_WALLET.json();
+      dispactch(ADD_EXPENSES({ ...expenses, exchangeRates }));
     } catch (error) {
       dispactch(fail(error));
     }
