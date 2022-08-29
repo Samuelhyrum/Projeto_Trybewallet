@@ -1,5 +1,5 @@
 // Coloque aqui suas actions
-import { LOGIN_USER, WALLET, API, FAIL, EXPENSES } from './types';
+import { LOGIN_USER, WALLET, API, FAIL, EXPENSES, DELETE_COSTUMER } from './types';
 
 export const loginUser = (userProfile) => ({
   type: LOGIN_USER,
@@ -19,6 +19,10 @@ const fail = (error) => ({
 const ADD_EXPENSES = (expenses) => ({
   type: EXPENSES,
   expenses,
+});
+export const deleteCostumer = (arr) => ({
+  type: DELETE_COSTUMER,
+  payload: { arr },
 });
 
 export function fetchMoeadas() {
